@@ -1,4 +1,4 @@
-const { offlineFallback, warmStrategyCache } = require("workbox-recipes");
+const { warmStrategyCache } = require("workbox-recipes");
 const { CacheFirst } = require("workbox-strategies");
 const { registerRoute } = require("workbox-routing");
 const { CacheableResponsePlugin } = require("workbox-cacheable-response");
@@ -38,11 +38,6 @@ const assetCache = new CacheFirst({
       maxAgeSeconds: 7 * 24 * 60 * 60,
     }),
   ],
-});
-// not sure what i am supposed to do with this?
-offlineFallback({
-  urls: ["/index.html", "/"],
-  strategy: assetCache,
 });
 
 registerRoute(
