@@ -41,7 +41,7 @@ const assetCache = new CacheFirst({
 });
 // not sure what i am supposed to do with this?
 offlineFallback({
-  urls: ["./"],
+  urls: ["/index.html", "/"],
   strategy: assetCache,
 });
 
