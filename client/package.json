@@ -8,11 +8,7 @@
   "author": "2U",
   "license": "UNLICENSED",
   "devDependencies": {
-    "css-loader": "^6.2.0",
-    "http-server": "^0.11.1",
-    "mini-css-extract-plugin": "^2.4.5",
-    "style-loader": "^3.2.1",
-    "workbox-webpack-plugin": "^6.2.4"
+    
   },
   "dependencies": {
     "code-mirror-themes": "^1.0.0",
@@ -27,6 +23,11 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.15.0",
     "@babel/runtime": "^7.15.3",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "style-loader": "^3.2.1",
+    "workbox-webpack-plugin": "^6.2.4"
   }
 }
