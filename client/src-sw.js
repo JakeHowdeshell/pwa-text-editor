@@ -1,3 +1,7 @@
+// Imported the StaleWhileRevalidate object 
+
+import { StaleWhileRevalidate } from 'workbox-strategies';
+
 const { warmStrategyCache } = require("workbox-recipes");
 const { CacheFirst } = require("workbox-strategies");
 const { registerRoute } = require("workbox-routing");
@@ -26,24 +30,15 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === "navigate", pageCache);
 
-// TODO: Implement asset caching (check on urls)
 
-const assetCache = new CacheFirst({
-  cacheName: "asset-cache",
-  plugins: [
-    new CacheableResponsePlugin({
-      statuses: [0, 200],
-    }),
-    new ExpirationPlugin({
-      maxAgeSeconds: 7 * 24 * 60 * 60,
-    }),
-  ],
-});
-
+// implemented the "registerRoute" method to enable static asset caching using the 
+// StaleWhileRevalidate object. 
 registerRoute(
   ({ request }) =>
     request.destination === "script" ||
     request.destination === "style" ||
     request.destination === "image" ||
-    request.destination === "font", assetCache
+    request.destination === "font" ||
+    request.destination === "icon",
+    new StaleWhileRevalidate()
 );
