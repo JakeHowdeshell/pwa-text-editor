@@ -44,6 +44,8 @@ module.exports = () => {
             destination: path.join("assets", "icons"),
           },
         ],
+        fingerprints: true,
+        inject: true,
       }),
     ],
 
